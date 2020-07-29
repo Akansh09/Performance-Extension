@@ -1,0 +1,16 @@
+{
+    "name": "Performance Report",
+    "version": "1.0",
+    "description": "Analyse any URL's performance!",
+    "permissions": ["storage","activeTab","tabs","background"],
+    "manifest_version": 2,
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "run_at": "document_idle",
+        "all_frames": false,
+        "js": ["constant.js","background.js"],
+        "exclude_globs": ["*popup.html*"]
+      }
+    ]
+}
